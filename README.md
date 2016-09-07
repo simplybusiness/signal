@@ -7,6 +7,10 @@ It will demonstrate to test
 - How to receive a call
 - How to hangup
 
+## Reference
+
+We will use [Twilio Client Ruby Quickstart](https://www.twilio.com/docs/quickstart/ruby/client) as a base line.
+
 ## TODO
 
 - Dynamically fetch ngrok url
