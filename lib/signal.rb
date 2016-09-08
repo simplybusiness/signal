@@ -22,8 +22,8 @@ module Signal
 
       def call_customer
         client.calls.create(
-          from: "+#{App.config['callee_id']}",
-          to: "+#{App.config['caller_id']}",
+          from: "+#{config['callee_id']}",
+          to: "+#{config['caller_id']}",
           url: connect_url
         )
       end
@@ -34,7 +34,7 @@ module Signal
 
       def start
         Signal::NgrokRunner.start_for(env)
-        puts "starting nrok on #{Signal::App.ngrok_url}"
+        puts "starting nrok on #{ngrok_url}"
         update_incoming_phone_numbers
         puts "updateing to #{incoming_url}"
       end
@@ -54,8 +54,8 @@ module Signal
 
       def client
         @client ||= Twilio::REST::Client.new(
-          App.config['account_sid'],
-          App.config['auth_token']
+          config['account_sid'],
+          config['auth_token']
         )
       end
 
