@@ -18,19 +18,19 @@ get '/' do
   erb :index, locals: { token: token }
 end
 
-post '/outbound' do
-  response = Twilio::TwiML::Response.new do |r|
-    r.Say 'Hello world. You are really having a nice day', voice: 'alice'
-  end
-  response.text
-end
-
-post '/inbound' do
+post '/voice' do
   response = Twilio::TwiML::Response.new do |r|
     # Should be your Twilio Number or a verified Caller ID
     r.Dial callerId: "+#{Signal::App.config['caller_id']}" do |d|
       d.Client 'jenny'
     end
+  end
+  response.text
+end
+
+post '/customer_voice' do
+  response = Twilio::TwiML::Response.new do |r|
+    r.Say 'Hello World. Signal conference London. Lukas is a fine young lad. Buy him a pint after this workshop', voice: 'alice'
   end
   response.text
 end

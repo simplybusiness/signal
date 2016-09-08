@@ -15,7 +15,7 @@ end
 
 step 'the consultant hangs up' do
   # This sleep is just to show the screen. Can be removed
-  sleep 5
+  sleep 10
   click_on('Hangup')
 end
 

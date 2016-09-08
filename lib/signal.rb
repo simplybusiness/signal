@@ -47,7 +47,7 @@ module Signal
       end
 
       def incoming_url
-        "#{ngrok_url}/inbound"
+        "#{ngrok_url}/voice"
       end
 
       private
@@ -60,7 +60,7 @@ module Signal
       end
 
       def connect_url
-        "#{ngrok_url}/outbound"
+        "#{ngrok_url}/customer_voice"
       end
     end
   end
