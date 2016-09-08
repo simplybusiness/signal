@@ -11,8 +11,6 @@ class App
   end
 end
 
-raise App.config.inspect
-
 get '/' do
   # Find these values at twilio.com/user/account
   account_sid = App.config['account_sid']
