@@ -2,7 +2,9 @@ require 'tempfile'
 require 'timeout'
 require 'uri'
 require 'json'
+
 module Signal
+  # This Module dynamically start and detect ngrok URL
   module NgrokRunner
     module_function
 

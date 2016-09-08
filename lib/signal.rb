@@ -3,6 +3,11 @@ require 'yaml'
 require './lib/ngrok_runner'
 
 module Signal
+  # This class is in charge of the following
+  # - load config
+  # - start ngrok
+  # - update incoming_phone_numbers
+  # - call client
   class App
     class << self
       def config
@@ -17,9 +22,9 @@ module Signal
 
       def call_customer
         client.calls.create(
-          :from => "+#{App.config['callee_id']}",
-          :to => "+#{App.config['caller_id']}",
-          :url => connect_url
+          from: "+#{App.config['callee_id']}",
+          to: "+#{App.config['caller_id']}",
+          url: connect_url
         )
       end
 
@@ -35,7 +40,9 @@ module Signal
       end
 
       def update_incoming_phone_numbers
-        number = client.account.incoming_phone_numbers.list(friendly_name:config['caller_id']).first
+        number = client.account.incoming_phone_numbers.list(
+          friendly_name: config['caller_id']
+        ).first
         number.update(voice_url: incoming_url)
       end
 

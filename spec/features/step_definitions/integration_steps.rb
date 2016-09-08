@@ -14,6 +14,7 @@ step 'the consultant is connected to the customer' do
 end
 
 step 'the consultant hangs up' do
+  # This sleep is just to show the screen. Can be removed
   sleep 5
   click_on('Hangup')
 end

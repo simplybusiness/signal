@@ -13,14 +13,14 @@ get '/' do
   # This application sid will play a Welcome Message.
   demo_app_sid = 'APabe7650f654fc34655fc81ae71caa3ff'
   capability.allow_client_outgoing demo_app_sid
-  capability.allow_client_incoming "jenny"
+  capability.allow_client_incoming 'jenny'
   token = capability.generate
-  erb :index, :locals => {:token => token}
+  erb :index, locals: { token: token }
 end
 
 post '/outbound' do
   response = Twilio::TwiML::Response.new do |r|
-    r.Say 'Hello world. You are really having a nice day', :voice => 'alice'
+    r.Say 'Hello world. You are really having a nice day', voice: 'alice'
   end
   response.text
 end
@@ -28,15 +28,13 @@ end
 post '/inbound' do
   response = Twilio::TwiML::Response.new do |r|
     # Should be your Twilio Number or a verified Caller ID
-    r.Dial :callerId => "+#{Signal::App.config['caller_id']}" do |d|
+    r.Dial callerId: "+#{Signal::App.config['caller_id']}" do |d|
       d.Client 'jenny'
     end
   end
   response.text
 end
 
-if %w{development test}.include? Signal::App.env
-  Thread.new {
-    Signal::App.start
-  }
+if %w(development test).include? Signal::App.env
+  Thread.new { Signal::App.start }
 end

@@ -1,0 +1,69 @@
+---
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+Style/VariableName:
+  Enabled: true
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
+Style/TrailingBlankLines:
+  Enabled: true
+  Severity: warning
+
+TrailingWhitespace:
+  Enabled: true
+  Severity: warning
+
+Lint/DuplicateMethods:
+  Enabled: true
+  Severity: warning
+
+Style/SpecialGlobalVars:
+  Enabled: true
+  Severity: warning
+
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
+Style/ColonMethodCall:
+  Enabled: true
+  Severity: warning
+
+Style/RedundantReturn:
+  Enabled: true
+  Severity: warning
+
+Lint/UselessAssignment:
+  Enabled: true
+  Severity: warning
+
+Lint/UnusedBlockArgument:
+  Enabled: true
+  Severity: warning
+
+Performance/Count:
+  Enabled: true
+  Severity: warning
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: true
+  Severity: warning
+
+Documentation:
+  Enabled: false
+
+ModuleLength:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 200
