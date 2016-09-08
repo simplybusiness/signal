@@ -5,3 +5,7 @@ Feature: Integration
 
   Scenario: Successful connection to the customer
     Given a consultant is ready to receive a call
+    When a customer calls
+    Then the consultant is connected to the customer
+    When the consultant hangs up
+    Then the consultant is diconneted from the cusotmer

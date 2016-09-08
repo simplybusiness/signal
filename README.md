@@ -13,7 +13,7 @@ We will use [Twilio Client Ruby Quickstart](https://www.twilio.com/docs/quicksta
 
 ## TODO
 
-1. Write Capybara test
+1. Write Capybara test: DONE
 1. Create Sinatra endpoint to call incoming number
 1. Dynamically update incoming PhoneNumber [callback url](https://www.twilio.com/docs/api/rest/incoming-phone-numbers) to point to ngrok url
 1. Dynamically fetch ngrok url
