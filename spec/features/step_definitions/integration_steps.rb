@@ -5,7 +5,7 @@ step 'a consultant is ready to receive a call' do
 end
 
 step 'a customer calls' do
-  App.call_customer
+  Signal::App.call_customer
 end
 
 step 'the consultant is connected to the customer' do
