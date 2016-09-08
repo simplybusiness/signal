@@ -1,8 +1,11 @@
+ENV['ENV'] = 'test'
+
 require 'capybara/rspec'
 require 'turnip'
 require './app.rb'
 require 'sinatra'
 require './spec/support/twilio_device_rspec_matcher'
+
 Capybara.register_driver :selenium_chrome do |app|
   # This will fake connecting to browser microphone
   # so it does not give 'allow this app to access microphone' popup.
@@ -14,6 +17,7 @@ Capybara.register_driver :selenium_chrome do |app|
 end
 
 Capybara.current_driver = :selenium_chrome
-Capybara.app_host = 'https://58753fbc.ngrok.io'
+Capybara.app = Sinatra::Application
 Capybara.default_max_wait_time = 20
+Capybara.server_port = 4568
 Dir.glob('spec/features/step_definitions/*steps.rb') { |f| load f, true }
