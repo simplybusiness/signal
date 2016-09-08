@@ -8,14 +8,19 @@ module Signal
       end
 
       def call_customer
-        client = Twilio::REST::Client.new(
-          App.config['account_sid'],
-          App.config['auth_token']
-        )
-        call = client.calls.create(
+        client.calls.create(
           :from => App.config['callee_id'],
           :to => App.config['caller_id'],
           :url => connect_url
+        )
+      end
+
+      private
+
+      def client
+        @client ||= Twilio::REST::Client.new(
+          App.config['account_sid'],
+          App.config['auth_token']
         )
       end
 
