@@ -3,6 +3,7 @@ require 'turnip'
 require './app.rb'
 require 'sinatra'
 
+require './spec/support/twilio_device_rspec_matcher'
 Capybara.register_driver :selenium_chrome do |app|
   # This will fake connecting to browser microphone
   # so it does not give 'allow this app to access microphone' popup.
