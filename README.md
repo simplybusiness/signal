@@ -65,6 +65,8 @@ At the `Seeings` section of your project, please do the followings
 
 ### Add command lines
 
+`nvm use 6` and `scripts/ci`
+
 <img width="500px" src="doc/img/semaphore_build_settings.png"></img>
 
 ### Upload `config/config.yml`
