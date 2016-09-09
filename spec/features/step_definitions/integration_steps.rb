@@ -10,6 +10,10 @@ end
 
 step 'the consultant is connected to the customer' do
   expect(page).to have_twilio_device_status('busy')
+  # have_conent/have_css will wait for the DOM content change only if the user clicks links or buttons.
+  # https://github.com/jnicklas/capybara#asynchronous-javascript-ajax-and-friends
+  # Because `a customer calls` happens outside of the browser, you either need to
+  # sleep or use `have_twilio_device_status('ready')` matcher to wait until the DOM status changes.
   expect(page).to have_content('Successfully established call')
 end
 
