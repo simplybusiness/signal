@@ -24,7 +24,7 @@ This sample project demonstrates the followings
 
 1. Write Capybara tests that assert when a consultant receives a call from a customer
 1. Dynamically start [ngrok](http://ngrok.com) and fetch its url
-1. Dynamically update a incoming phone number [callback url](https://www.twilio.com/docs/api/rest/incoming-phone-numbers) to point to the ngrok url
+1. Dynamically update a Twilio incoming phone number [callback url](https://www.twilio.com/docs/api/rest/incoming-phone-numbers) to point to the ngrok url
 1. Configure Chrome driver to enable running on the headless environment
 1. Run the integration tests on Semaphore
 
