@@ -11,8 +11,10 @@ module Signal
   class App
     class << self
       def config
+        puts `pwd`
+        puts File.expand_path('../../config/config.yml', __FILE__)
         @config ||= begin
-          YAML.load_file('./config/config.yml')
+          YAML.load_file(File.expand_path('../../config/config.yml', __FILE__))
         end
       end
 
