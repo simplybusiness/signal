@@ -14,6 +14,8 @@ We assume you are already familiar with the following.
 - Basic knowledge of testing frameworks and tools, such as [RSpec](http://rspec.info/),[Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin), and [Capybara](https://github.com/jnicklas/capybara)
 - Basic knowledge of CI(Continuous Integration), such as [Semaphoreci](http://semaphoreci.com) though the approach is applicable to other solutions.
 
+This project is tested under OS X only.
+
 ## Scope of the tests
 
 We use [Twilio Client Ruby Quickstart](https://www.twilio.com/docs/quickstart/ruby/client) as a base project.
