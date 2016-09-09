@@ -10,7 +10,7 @@ We assume you are already familiar with the followings
 
 - Basic knowledge about how to use [Twilio.js](https://www.twilio.com/docs/api/client/twilio-js)
 - Basic knowledge of Ruby and Sinatra web framework
-- Basic knowledge of Javascript
+- Basic knowledge of JavaScript
 - Basic knowledge of testing frameworks and tools, such as [RSpec](http://rspec.info/), [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin), and [Capybara](https://github.com/jnicklas/capybara)
 - Basic knowledge of CI (Continuous Integration), such as [Semaphoreci](http://semaphoreci.com) though the approach is applicable to other solutions.
 
