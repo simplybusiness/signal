@@ -28,7 +28,14 @@ This sample project demonstrates the followings
 1. Configure Chrome driver to enable running on the headless environment
 1. Run the integration tests on Semaphore
 
-## How to setup
+## How to setup locally
+
+### Prerequisites
+
+- [Chrome driver](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver)
+- [ngrok](http://ngrok.com)
+- Ruby (tested with version 2.2.3)
+- [Bundler](http://bundler.io/)
 
 ### Clone the repo
 
