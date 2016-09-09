@@ -32,11 +32,15 @@ module Signal
         Signal::NgrokRunner.url(env)
       end
 
+      def ngrok_tunnelling_port
+        Signal::NgrokRunner.ngrok_tunnelling_port(env)
+      end
+
       def start
         Signal::NgrokRunner.start_for(env)
-        puts "starting nrok on #{ngrok_url}"
+        puts "Starting nrok on #{ngrok_url}"
         update_incoming_phone_numbers
-        puts "updateing to #{incoming_url}"
+        puts "Updateing incoming phone number to callback to #{incoming_url}"
       end
 
       def update_incoming_phone_numbers

@@ -19,5 +19,5 @@ end
 Capybara.current_driver = :selenium_chrome
 Capybara.app = Sinatra::Application
 Capybara.default_max_wait_time = 20
-Capybara.server_port = 4568
+Capybara.server_port = Signal::App.ngrok_tunnelling_port
 Dir.glob('spec/features/step_definitions/*steps.rb') { |f| load f, true }
