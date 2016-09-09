@@ -46,12 +46,12 @@ cp config/config.yml.example config/config.yml
 
 ### Obtain Twilio account SID and its auth token
 
-Follow [this Twilio guide](https://support.twilio.com/hc/en-us/articles/223136027-Auth-Tokens-and-how-to-change-them) to botain Account SID and Auth token, then add them to `config/conig.yml` as `account_sid` and `auth_token`
+Follow [this Twilio guide](https://support.twilio.com/hc/en-us/articles/223136027-Auth-Tokens-and-how-to-change-them) to botain Account SID and Auth token, then add them to `config/config.yml` as `account_sid` and `auth_token`
 
 ### Purchase a Twilio incoming number
 
 Purchase [Twilio incoming number](https://www.twilio.com/user/account/phone-numbers/incoming
-), then add the number to `config/conig.yml` as `caller_id` (please omit `+`)
+), then add the number to `config/config.yml` as `caller_id` (please omit `+`)
 
 ## Running the tests locally
 
