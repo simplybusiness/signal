@@ -5,6 +5,10 @@ step 'a consultant is ready to receive a call' do
 end
 
 step 'a customer calls' do
+  # This steps emulates that a user gives a call to a call center for inbound calls.
+  # For the outbound calls, you would normally sends a lead task through
+  # TaskRouter (https://www.twilio.com/docs/api/taskrouter)
+  # This is simplified approach for the demo purpose.
   Signal::App.call_customer
 end
 
