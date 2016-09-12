@@ -36,8 +36,17 @@ This sample project demonstrates the followings
 - [ngrok](http://ngrok.com)
 - Ruby (tested with version 2.2.3)
 - [Bundler](http://bundler.io/)
+- [Semaphore CI account](https://semaphoreci.com/) which is free for open source. You can also adapt the solution for other CI services.
+- [Twilio account](https://www.twilio.com/) of course
+
+For CI servers other than Semaphore, you will need to provision `Xvfb` if this is
+not started or installed.
+
+- [Xvfb](https://www.x.org/archive/current/doc/man/man1/Xvfb.1.xhtml)
 
 ### Clone the repo
+
+*Substitute your own clone/fork of this repo if desired*
 
 ```
 git clone https://github.com/simplybusiness/signal
@@ -53,7 +62,7 @@ cp config/config.yml.example config/config.yml
 
 ### Obtain Twilio account SID and its auth token
 
-Follow [this Twilio guide](https://support.twilio.com/hc/en-us/articles/223136027-Auth-Tokens-and-how-to-change-them) to botain Account SID and Auth token, then add them to `config/config.yml` as `account_sid` and `auth_token`
+Follow [this Twilio guide](https://support.twilio.com/hc/en-us/articles/223136027-Auth-Tokens-and-how-to-change-them) to obtain Account SID and Auth token, then add them to `config/config.yml` as `account_sid` and `auth_token`
 
 ### Purchase a Twilio incoming number
 
@@ -68,13 +77,29 @@ bundle exec rake
 
 ## Running the tests on CI
 
-At the `Project Setting` section of your project, please do the followings
+Create a project in Semaphore CI from your forked/cloned copy of our repo.
+
+At the `Project Setting` section of your project in Semaphore, please do the following
 
 ### Add command lines
 
-`nvm use 6` and `scripts/ci`
+`nvm use 6` and `scripts/ci` to the `Setup` section.
 
 <img width="500px" src="doc/img/semaphore_build_settings.png"></img>
+
+Edit `bundle exec rake spec` to `bundle exec rake` in the `Jobs` section.
+This ensures `Rubocop` is run as well as the RSpec tests.
+
+#### Starting `Xvfb` if not on Semaphore CI
+
+You may need code like the following in your CI setup code.
+
+*NOTE: This code has not been tested*
+
+```
+export DISPLAY=:99.0
+/sbin/start-stop-daemon --start --quiet --pidfile /tmp/cucumber_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1600x1200x16
+```
 
 ### Upload `config/config.yml`
 
