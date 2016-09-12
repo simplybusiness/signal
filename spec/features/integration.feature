@@ -8,4 +8,4 @@ Feature: Integration
     When a customer calls
     Then the consultant is connected to the customer
     When the consultant hangs up
-    Then the consultant is diconneted from the cusotmer
+    Then the consultant is disconnected from the customer

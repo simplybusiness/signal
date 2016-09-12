@@ -27,7 +27,7 @@ step 'the consultant hangs up' do
   click_on('Hangup')
 end
 
-step 'the consultant is diconneted from the cusotmer' do
+step 'the consultant is disconnected from the customer' do
   expect(page).to have_twilio_device_status('ready')
   expect(page).to have_content('Call ended')
 end
