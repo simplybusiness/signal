@@ -68,7 +68,7 @@ bundle exec rake
 
 ## Running the tests on CI
 
-At the `Seeings` section of your project, please do the followings
+At the `Settings` section of your project, please do the followings
 
 ### Add command lines
 
