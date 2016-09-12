@@ -4,7 +4,7 @@ require 'uri'
 require 'json'
 
 module Signal
-  # This module dynamically start and detect ngrok URL
+  # This module dynamically starts and detects the ngrok URL
   # It can potentially be extracted as a gem.
   module NgrokRunner
     module_function
