@@ -1,5 +1,7 @@
 # Signal Simply Business Workshop
 
+[![Build Status](https://semaphoreci.com/api/v1/projects/4382a32d-b43a-4c60-ab10-865e7078dd90/967417/badge.svg)](https://semaphoreci.com/simplybusiness/signal)
+
 ## Summary
 
 A tutorial app that demonstrates how to write and setup end to end integration tests against an application that integrates with Twilio. For the full detail, please read [our](http://tech.simplybusiness.co.uk/2016/06/07/continuous-integration-for-twilio/) [blog](http://tech.simplybusiness.co.uk/2016/06/07/continuous-integration-for-twilio-part-2/) [posts](http://tech.simplybusiness.co.uk/2016/06/07/continuous-integration-for-twilio-part-3/).
