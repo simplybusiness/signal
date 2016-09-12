@@ -40,7 +40,7 @@ module Signal
         Signal::NgrokRunner.start_for(env)
         puts "Starting nrok on #{ngrok_url}"
         update_incoming_phone_numbers
-        puts "Updateing incoming phone number to callback to #{incoming_url}"
+        puts "Updating incoming phone number to callback to #{incoming_url}"
       end
 
       def update_incoming_phone_numbers
