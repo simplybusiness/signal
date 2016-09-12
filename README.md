@@ -83,12 +83,13 @@ At the `Project Setting` section of your project in Semaphore, please do the fol
 
 ### Add command lines
 
-`nvm use 6` and `scripts/ci` to the `Setup` section.
+Remove the `Setup` job.
+
+Add `scripts/ci` to the `Jobs` section, removing what is already there.
+
+The final result should look like this:
 
 <img width="500px" src="doc/img/semaphore_build_settings.png"></img>
-
-Edit `bundle exec rake spec` to `bundle exec rake` in the `Jobs` section.
-This ensures `Rubocop` is run as well as the RSpec tests.
 
 #### Starting `Xvfb` if not on Semaphore CI
 
