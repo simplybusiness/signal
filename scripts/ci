@@ -6,4 +6,6 @@ npm install --no-progress
 npm rebuild --no-progress
 
 npm install chromedriver ngrok --no-progress
-PATH=$PATH:`pwd`/node_modules/ngrok/bin;`pwd`/node_modules/chromedriver/bin/
+PATH=$PATH:`pwd`/node_modules/ngrok/bin:`pwd`/node_modules/chromedriver/bin/
+echo `pwd`
+echo $PATH
