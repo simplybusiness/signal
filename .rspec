@@ -1,0 +1,5 @@
+--colour
+--order rand
+--require spec_helper.rb
+--require turnip/rspec
+--format doc

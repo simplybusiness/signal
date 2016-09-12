@@ -2,42 +2,39 @@
 require 'sinatra'
 require 'twilio-ruby'
 require 'yaml'
-
-class App
-  def self.config
-    @config ||= begin
-      YAML.load_file('./config/config.yml')
-    end
-  end
-end
-
-raise App.config.inspect
+require './lib/signal'
+require './lib/ngrok_runner'
 
 get '/' do
   # Find these values at twilio.com/user/account
-  account_sid = App.config['account_sid']
-  auth_token = App.config['auth_token']
-  demo_app_sid = App.config['demo_app_sid']
+  account_sid = Signal::App.config['account_sid']
+  auth_token = Signal::App.config['auth_token']
   capability = Twilio::Util::Capability.new account_sid, auth_token
+  # This application sid will play a Welcome Message.
+  demo_app_sid = 'APabe7650f654fc34655fc81ae71caa3ff'
   capability.allow_client_outgoing demo_app_sid
-  capability.allow_client_incoming "jenny"
+  capability.allow_client_incoming 'jenny'
   token = capability.generate
-  erb :index, :locals => {:token => token}
+  erb :index, locals: { token: token }
 end
 
-post '/outbound' do
-  response = Twilio::TwiML::Response.new do |r|
-    r.Say 'Hello world', :voice => 'alice'
-  end
-  response.text
-end
-
-post '/inbound' do
+post '/voice' do
   response = Twilio::TwiML::Response.new do |r|
     # Should be your Twilio Number or a verified Caller ID
-    r.Dial :callerId => App.config['caller_id'] do |d|
+    r.Dial callerId: "+#{Signal::App.config['caller_id']}" do |d|
       d.Client 'jenny'
     end
   end
   response.text
+end
+
+post '/customer_voice' do
+  response = Twilio::TwiML::Response.new do |r|
+    r.Say 'Hello World. Signal conference London. Lukas is a fine young lad. Buy him a pint after this workshop', voice: 'alice'
+  end
+  response.text
+end
+
+if %w(development test).include? Signal::App.env
+  Thread.new { Signal::App.start }
 end

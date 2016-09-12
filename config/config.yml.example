@@ -1,4 +1,6 @@
 account_sid: ACxxxx
 auth_token:  c1xxxx
-demo_app_sid: APxxxx
-caller_id: +44xxxxx
+# Buy a number at https://www.twilio.com/console/phone-numbers/incoming
+caller_id: 44xxxxx
+# This is used as a demo customer number. Any number is fine.
+callee_id: 44xxxxx
