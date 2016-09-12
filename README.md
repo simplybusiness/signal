@@ -18,7 +18,7 @@ This project is tested under OS X only.
 
 ## Scope of the tests
 
-We use [Twilio Client Ruby Quickstart](https://www.twilio.com/docs/quickstart/ruby/client) as a base project.
+We use [RUBY QUICKSTART: HELLO MONKEY CLIENT](https://www.twilio.com/docs/quickstart/ruby/client/hello-monkey) as a base project.
 
 This sample project demonstrates the followings
 
