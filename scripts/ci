@@ -6,6 +6,10 @@ npm install --no-progress
 npm rebuild --no-progress
 
 npm install chromedriver ngrok --no-progress
+<<<<<<< HEAD
 PATH=$PATH:`pwd`/node_modules/ngrok/bin;`pwd`/node_modules/chromedriver/bin/
 
 bundle exec rake
+=======
+PATH=$PATH:`pwd`/node_modules/ngrok/bin;`pwd`/node_modules/chromedriver/bin/
+>>>>>>> 461968f2fc0a5e6cafefabfaba48fe3160e2a118
