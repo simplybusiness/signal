@@ -68,7 +68,7 @@ Follow [this Twilio guide](https://support.twilio.com/hc/en-us/articles/22313602
 
 ### Purchase a Twilio incoming number
 
-Purchase [Twilio incoming number](https://www.twilio.com/user/account/phone-numbers/incoming
+Obtain [Twilio incoming number](https://www.twilio.com/user/account/phone-numbers/incoming
 ), then add the number to `config/config.yml` as `caller_id` (please omit `+`)
 
 ## Running the tests locally
