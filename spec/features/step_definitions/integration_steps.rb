@@ -9,7 +9,7 @@ step 'a customer calls' do
   # For the outbound calls, you would normally sends a lead task through
   # TaskRouter (https://www.twilio.com/docs/api/taskrouter)
   # This is simplified approach for the demo purpose.
-  Signal::App.call_customer
+  Signal::App.trigger_call_from_customer
 end
 
 step 'the consultant is connected to the customer' do

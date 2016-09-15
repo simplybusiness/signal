@@ -20,11 +20,13 @@ module Signal
         ENV['ENV'] || 'development'
       end
 
-      def call_customer
+      # this method is really part of the test harness.  It lives
+      # in the application for convenience
+      def trigger_call_from_customer
         client.calls.create(
           from: "+#{config['callee_id']}",
           to: "+#{config['caller_id']}",
-          url: connect_url
+          url: twiml_test_message_url
         )
       end
 
@@ -63,7 +65,7 @@ module Signal
         )
       end
 
-      def connect_url
+      def twiml_test_message_url
         "#{ngrok_url}/customer_voice"
       end
     end
